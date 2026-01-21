@@ -28,4 +28,5 @@ pnpm build-storybook  # Build static Storybook
 GitHub Pages deployment is automated via GitHub Actions. Pushing to `main` triggers a build and deploy.
 
 **Setup required in GitHub repo settings:**
+
 1. Settings → Pages → Source: "GitHub Actions"
