@@ -2,7 +2,6 @@ export { Header } from './Header';
 export { Hero } from './Hero';
 export { Vision } from './Vision';
 export { Projects } from './Projects';
-export { Stats } from './Stats';
 export { Culture } from './Culture';
 export { Recruitment } from './Recruitment';
 export { CompanyInfo } from './CompanyInfo';
