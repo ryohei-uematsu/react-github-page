@@ -2,11 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 
 const cultureItems = [
   {
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop',
-    title: '快適なオフィス環境',
-    description: '集中できる静かなスペースとコミュニケーションを促進するオープンスペースを完備。',
-  },
-  {
     image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop',
     title: 'フラットな組織',
     description: '上下関係にとらわれず、自由に意見を交換できる風通しの良い職場です。',
@@ -80,13 +75,16 @@ const CultureCard = ({ item, index }: { item: (typeof cultureItems)[0]; index: n
 
 export const Culture = () => {
   return (
-    <section id="culture" className="py-32 px-6 md:px-12 max-w-[1400px] mx-auto bg-white">
+    <section
+      id="culture"
+      className="py-32 px-6 md:px-12 max-w-[1400px] mx-auto bg-gradient-to-b from-white to-accent"
+    >
       <h2 className="font-serif text-4xl md:text-5xl mb-4 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-20 after:h-1 after:bg-highlight">
         Culture
       </h2>
       <p className="text-lg text-text-light mb-16 mt-8">働きやすい環境づくり</p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
         {cultureItems.map((item, index) => (
           <CultureCard key={item.title} item={item} index={index} />
         ))}

@@ -3,7 +3,6 @@ import {
   Hero,
   Vision,
   Projects,
-  Stats,
   Culture,
   Recruitment,
   CompanyInfo,
@@ -18,7 +17,6 @@ function App() {
         <Hero />
         <Vision />
         <Projects />
-        <Stats />
         <Culture />
         <Recruitment />
         <CompanyInfo />
