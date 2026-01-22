@@ -1,16 +1,8 @@
 import { useState } from 'react';
 import { PolicyModal } from './PolicyModal';
+import companyLogo from '../assets/companyname.png';
 
 const footerSections = [
-  {
-    title: '会社情報',
-    links: [
-      { href: '#vision', label: 'ビジョン' },
-      { href: '#projects', label: '実績' },
-      { href: '#culture', label: '企業文化' },
-      { href: '#', label: '会社概要' },
-    ],
-  },
   {
     title: 'サービス',
     links: [
@@ -40,12 +32,51 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-12">
           {/* Logo & Description */}
           <div>
-            <div className="font-serif text-3xl font-bold mb-6 tracking-wide">HIGHFLAT</div>
+            <img src={companyLogo} alt="HIGHFLAT" className="h-6 md:h-8 mb-6 brightness-0 invert" />
             <p className="opacity-80 leading-relaxed">
               技術で未来を創る。
               <br />
               社員の幸せを第一に考え、革新的なソリューションを提供します。
             </p>
+          </div>
+
+          {/* Company Info Section */}
+          <div className="md:text-left text-center">
+            <h4 className="text-xl font-bold mb-6">会社情報</h4>
+            <ul className="list-none space-y-3">
+              <li>
+                <a
+                  href="#vision"
+                  className="text-white/80 transition-colors duration-300 hover:text-white"
+                >
+                  ビジョン
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  className="text-white/80 transition-colors duration-300 hover:text-white"
+                >
+                  実績
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#culture"
+                  className="text-white/80 transition-colors duration-300 hover:text-white"
+                >
+                  企業文化
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#company"
+                  className="text-white/80 transition-colors duration-300 hover:text-white"
+                >
+                  会社概要
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Footer Sections */}

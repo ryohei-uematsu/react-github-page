@@ -12,7 +12,7 @@ export const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 5000); // 5秒ごとに切り替え
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
