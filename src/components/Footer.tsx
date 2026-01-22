@@ -17,7 +17,11 @@ const footerSections = [
     links: [
       { href: 'tel:050-3852-7092', label: '050-3852-7092' },
       { href: 'mailto:info@highflat.jp', label: 'info@highflat.jp' },
-      { href: '#', label: 'お問い合わせフォーム' },
+      {
+        href: 'https://docs.google.com/forms/d/e/1FAIpQLScpzWx-7777Ubaj3FVrbNV0I-v8uoaar3l8ZyGOGoDBr839CA/viewform?pli=1',
+        label: 'お問い合わせフォーム',
+        external: true,
+      },
     ],
   },
 ];
@@ -89,6 +93,10 @@ export const Footer = () => {
                     <a
                       href={link.href}
                       className="text-white/80 transition-colors duration-300 hover:text-white"
+                      {...(link.external && {
+                        target: '_blank',
+                        rel: 'noopener noreferrer',
+                      })}
                     >
                       {link.label}
                     </a>
