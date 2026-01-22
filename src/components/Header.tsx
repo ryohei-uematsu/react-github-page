@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import companyLogo from '../assets/companyname.png';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,9 @@ export const Header = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm animate-slide-down transition-shadow duration-300">
         <nav className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
-          <div className="font-serif text-3xl font-bold text-primary tracking-wide">HIGHFLAT</div>
+          <a href="#" className="block">
+            <img src={companyLogo} alt="HIGHFLAT" className="h-6 md:h-8" />
+          </a>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex gap-12 list-none">
