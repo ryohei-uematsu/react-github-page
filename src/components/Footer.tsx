@@ -117,7 +117,9 @@ export const Footer = () => {
               情報セキュリティ基本方針
             </button>
           </div>
-          <p className="opacity-60">&copy; 2025 HIGHFLAT Inc. All Rights Reserved.</p>
+          <p className="opacity-60">
+            &copy; {new Date().getFullYear()} HIGHFLAT co.,ltd. All Rights Reserved.
+          </p>
         </div>
       </div>
 
