@@ -63,7 +63,9 @@ export const Recruitment = () => {
         </div>
 
         <a
-          href="#contact"
+          href="https://docs.google.com/forms/d/e/1FAIpQLScpzWx-7777Ubaj3FVrbNV0I-v8uoaar3l8ZyGOGoDBr839CA/viewform?pli=1"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block px-12 py-5 gradient-primary text-white font-bold rounded-full mt-12 transition-all duration-300 shadow-lg hover:-translate-y-1 hover:shadow-xl"
         >
           採用に応募する
