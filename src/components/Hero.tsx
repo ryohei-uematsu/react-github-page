@@ -1,18 +1,48 @@
+import { useState, useEffect } from 'react';
+import office1 from '../assets/office1.jpg';
+import office2 from '../assets/office2.jpg';
+import office3 from '../assets/office3.jpg';
+import office4 from '../assets/office4.jpg';
+
+const images = [office1, office2, office3, office4];
+
 export const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000); // 5秒ごとに切り替え
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="h-screen gradient-primary relative overflow-hidden flex items-center justify-center">
-      {/* Animated Background */}
-      <div className="absolute inset-0 animate-float">
+    <section className="h-screen relative overflow-hidden flex items-center justify-center">
+      {/* Background Images with Fade */}
+      {images.map((image, index) => (
         <div
-          className="absolute inset-0"
+          key={index}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out"
           style={{
-            background: `
-              radial-gradient(circle at 20% 50%, rgba(161, 169, 120, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(125, 104, 83, 0.15) 0%, transparent 50%)
-            `,
+            backgroundImage: `url(${image})`,
+            opacity: index === currentIndex ? 1 : 0,
           }}
         />
-      </div>
+      ))}
+
+      {/* Dark Overlay for text readability */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Gradient Overlay for warmth */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `
+            linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.4) 100%)
+          `,
+        }}
+      />
 
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white max-w-[1200px] px-8 animate-fade-in-up">
