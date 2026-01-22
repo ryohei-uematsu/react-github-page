@@ -43,11 +43,11 @@
 
   /* Scroll-triggered section backgrounds */
   .section-bg-scroll {
-    background-color: #ffffff;
-    transition: background-color 1s ease-out;
+    background-color: #f3f7e8;
+    transition: background-color 2s ease-out;
   }
   .section-bg-scroll.in-view {
-    background-color: #f3f7e8;
+    background-color: #ffffff;
   }
 
   .text-gradient {

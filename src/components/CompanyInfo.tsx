@@ -79,7 +79,7 @@ export const CompanyInfo = () => {
             <h3 className="text-2xl font-bold text-primary mb-6">アクセス</h3>
             <div className="space-y-4">
               {accessInfo.map((info) => (
-                <div key={info.line} className="p-4 bg-white rounded-xl shadow-sm">
+                <div key={info.line} className="p-4 bg-light rounded-xl">
                   <p className="text-sm text-text-light">{info.line}</p>
                   <p className="font-bold">
                     {info.station} <span className="text-highlight font-normal">{info.time}</span>
