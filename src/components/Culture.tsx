@@ -56,20 +56,20 @@ const CultureCard = ({ item, index }: { item: (typeof cultureItems)[0]; index: n
       <img
         src={item.image}
         alt={item.title}
-        className={`w-full h-full object-cover transition-transform duration-600 group-hover:scale-110 ${
-          isVisible ? 'scale-100' : 'scale-110'
+        className={`w-full h-full object-cover transition-transform duration-600 ${
+          isVisible ? 'scale-110' : 'scale-100'
         }`}
       />
       <div
         className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[rgba(10,22,40,0.9)] to-transparent p-8 md:p-10 text-white transition-transform duration-500 ${
           isVisible ? 'translate-y-0' : 'translate-y-[60%]'
-        } md:translate-y-[60%] md:group-hover:translate-y-0`}
+        }`}
       >
         <h3 className="text-2xl md:text-3xl mb-3 font-bold">{item.title}</h3>
         <p
           className={`transition-all duration-400 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          } md:opacity-0 md:translate-y-5 md:group-hover:opacity-100 md:group-hover:translate-y-0`}
+          }`}
         >
           {item.description}
         </p>
