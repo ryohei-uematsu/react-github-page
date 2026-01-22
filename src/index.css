@@ -38,11 +38,16 @@
   }
 
   .gradient-secondary {
-    background: linear-gradient(
-      to right,
-      rgba(161, 169, 120, 0.1),
-      rgba(241, 247, 227, 0.05)
-    );
+    background: linear-gradient(to right, rgba(161, 169, 120, 0.1), rgba(241, 247, 227, 0.05));
+  }
+
+  /* Scroll-triggered section backgrounds */
+  .section-bg-scroll {
+    background-color: #ffffff;
+    transition: background-color 1s ease-out;
+  }
+  .section-bg-scroll.in-view {
+    background-color: #f3f7e8;
   }
 
   .text-gradient {

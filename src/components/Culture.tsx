@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useInView } from '../hooks/useInView';
 
 const cultureItems = [
   {
@@ -74,20 +75,24 @@ const CultureCard = ({ item, index }: { item: (typeof cultureItems)[0]; index: n
 };
 
 export const Culture = () => {
+  const { ref, isInView } = useInView();
   return (
     <section
+      ref={ref}
       id="culture"
-      className="py-32 px-6 md:px-12 max-w-[1400px] mx-auto bg-gradient-to-b from-white to-accent"
+      className={`py-32 px-6 md:px-12 section-bg-scroll ${isInView ? 'in-view' : ''}`}
     >
-      <h2 className="font-serif text-4xl md:text-5xl mb-4 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-20 after:h-1 after:bg-highlight">
-        Culture
-      </h2>
-      <p className="text-lg text-text-light mb-16 mt-8">働きやすい環境づくり</p>
+      <div className="max-w-[1400px] mx-auto">
+        <h2 className="font-serif text-4xl md:text-5xl mb-4 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-20 after:h-1 after:bg-highlight">
+          Culture
+        </h2>
+        <p className="text-lg text-text-light mb-16 mt-8">働きやすい環境づくり</p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-        {cultureItems.map((item, index) => (
-          <CultureCard key={item.title} item={item} index={index} />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          {cultureItems.map((item, index) => (
+            <CultureCard key={item.title} item={item} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   );

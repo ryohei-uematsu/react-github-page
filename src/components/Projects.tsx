@@ -37,29 +37,38 @@ const projects = [
   },
 ];
 
-export const Projects = () => {
-  return (
-    <section id="projects" className="py-32 px-6 md:px-12 max-w-[1400px] mx-auto bg-light">
-      <h2 className="font-serif text-4xl md:text-5xl mb-4 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-20 after:h-1 after:bg-highlight">
-        Projects
-      </h2>
-      <p className="text-lg text-text-light mb-16 mt-8">確かな実績と技術力</p>
+import { useInView } from '../hooks/useInView';
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        {projects.map((project) => (
-          <div
-            key={project.title}
-            className="group bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-400 relative hover:-translate-y-3 hover:shadow-xl before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:gradient-primary before:scale-x-0 before:origin-left before:transition-transform before:duration-400 hover:before:scale-x-100"
-          >
-            <div className="p-8 md:p-10">
-              <span className="inline-block px-4 py-2 gradient-secondary text-primary text-sm font-semibold rounded-full mb-6">
-                {project.tag}
-              </span>
-              <h3 className="text-xl md:text-2xl mb-4 text-primary font-bold">{project.title}</h3>
-              <p className="text-text-light leading-relaxed">{project.description}</p>
+export const Projects = () => {
+  const { ref, isInView } = useInView();
+  return (
+    <section
+      ref={ref}
+      id="projects"
+      className={`py-32 px-6 md:px-12 section-bg-scroll ${isInView ? 'in-view' : ''}`}
+    >
+      <div className="max-w-[1400px] mx-auto">
+        <h2 className="font-serif text-4xl md:text-5xl mb-4 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-20 after:h-1 after:bg-highlight">
+          Projects
+        </h2>
+        <p className="text-lg text-text-light mb-16 mt-8">確かな実績と技術力</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className="group bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-400 relative hover:-translate-y-3 hover:shadow-xl before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:gradient-primary before:scale-x-0 before:origin-left before:transition-transform before:duration-400 hover:before:scale-x-100"
+            >
+              <div className="p-8 md:p-10">
+                <span className="inline-block px-4 py-2 gradient-secondary text-primary text-sm font-semibold rounded-full mb-6">
+                  {project.tag}
+                </span>
+                <h3 className="text-xl md:text-2xl mb-4 text-primary font-bold">{project.title}</h3>
+                <p className="text-text-light leading-relaxed">{project.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
