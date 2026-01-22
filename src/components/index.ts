@@ -5,5 +5,5 @@ export { Projects } from './Projects';
 export { Stats } from './Stats';
 export { Culture } from './Culture';
 export { Recruitment } from './Recruitment';
-export { Access } from './Access';
+export { CompanyInfo } from './CompanyInfo';
 export { Footer } from './Footer';

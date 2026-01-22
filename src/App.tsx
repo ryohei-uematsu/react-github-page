@@ -6,7 +6,7 @@ import {
   Stats,
   Culture,
   Recruitment,
-  Access,
+  CompanyInfo,
   Footer,
 } from './components';
 
@@ -21,7 +21,7 @@ function App() {
         <Stats />
         <Culture />
         <Recruitment />
-        <Access />
+        <CompanyInfo />
       </main>
       <Footer />
     </>
