@@ -1,18 +1,15 @@
 const accessInfo = [
   {
-    icon: '🚃',
     line: 'JR山手線・京浜東北線・総武線',
     station: '秋葉原駅',
     time: '徒歩5分',
   },
   {
-    icon: '🚇',
     line: '東京メトロ日比谷線',
     station: '秋葉原駅',
     time: '徒歩5分',
   },
   {
-    icon: '🚇',
     line: 'つくばエクスプレス',
     station: '秋葉原駅',
     time: '徒歩6分',
@@ -59,14 +56,11 @@ export const Access = () => {
             <h3 className="text-2xl font-bold text-primary mb-6">アクセス</h3>
             <div className="space-y-4">
               {accessInfo.map((info) => (
-                <div key={info.line} className="flex items-start gap-4 p-4 bg-light rounded-xl">
-                  <span className="text-2xl">{info.icon}</span>
-                  <div>
-                    <p className="text-sm text-text-light">{info.line}</p>
-                    <p className="font-bold">
-                      {info.station} <span className="text-highlight font-normal">{info.time}</span>
-                    </p>
-                  </div>
+                <div key={info.line} className="p-4 bg-light rounded-xl">
+                  <p className="text-sm text-text-light">{info.line}</p>
+                  <p className="font-bold">
+                    {info.station} <span className="text-highlight font-normal">{info.time}</span>
+                  </p>
                 </div>
               ))}
             </div>
