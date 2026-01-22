@@ -8,6 +8,14 @@ const images = [office1, office2, office3, office4];
 
 export const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Preload first image
+  useEffect(() => {
+    const img = new Image();
+    img.src = images[0];
+    img.onload = () => setIsLoaded(true);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,7 +26,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="h-screen relative overflow-hidden flex items-center justify-center">
+    <section className="h-screen relative overflow-hidden flex items-center justify-center bg-primary">
       {/* Background Images with Fade */}
       {images.map((image, index) => (
         <div
@@ -26,7 +34,7 @@ export const Hero = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out"
           style={{
             backgroundImage: `url(${image})`,
-            opacity: index === currentIndex ? 1 : 0,
+            opacity: isLoaded && index === currentIndex ? 1 : 0,
           }}
         />
       ))}
