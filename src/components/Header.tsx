@@ -18,6 +18,7 @@ export const Header = () => {
     { href: '#projects', label: '実績' },
     { href: '#culture', label: '企業文化' },
     { href: '#recruitment', label: '採用情報' },
+    { href: '#access', label: 'アクセス' },
     { href: '#contact', label: 'お問い合わせ' },
   ];
 
@@ -25,9 +26,7 @@ export const Header = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm animate-slide-down transition-shadow duration-300">
         <nav className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
-          <div className="font-serif text-3xl font-bold text-primary tracking-wide">
-            HIGHFLAT
-          </div>
+          <div className="font-serif text-3xl font-bold text-primary tracking-wide">HIGHFLAT</div>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex gap-12 list-none">
@@ -80,9 +79,7 @@ export const Header = () => {
             <li
               key={link.href}
               className={`my-8 transition-all duration-400 ${
-                isMenuOpen
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-5'
+                isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`}
               style={{ transitionDelay: isMenuOpen ? `${(index + 1) * 0.1}s` : '0s' }}
             >
