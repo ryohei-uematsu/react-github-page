@@ -2,30 +2,6 @@ import { useState } from 'react';
 import { PolicyModal } from './PolicyModal';
 import companyLogo from '../assets/companyname.png';
 
-const footerSections = [
-  {
-    title: 'サービス',
-    links: [
-      { href: '#', label: 'システム開発' },
-      { href: '#', label: 'Web制作' },
-      { href: '#', label: 'インフラ構築' },
-      { href: '#', label: 'サポート業務' },
-    ],
-  },
-  {
-    title: 'お問い合わせ',
-    links: [
-      { href: 'tel:050-3852-7092', label: '050-3852-7092' },
-      { href: 'mailto:info@highflat.jp', label: 'info@highflat.jp' },
-      {
-        href: 'https://docs.google.com/forms/d/e/1FAIpQLScpzWx-7777Ubaj3FVrbNV0I-v8uoaar3l8ZyGOGoDBr839CA/viewform?pli=1',
-        label: 'お問い合わせフォーム',
-        external: true,
-      },
-    ],
-  },
-];
-
 export const Footer = () => {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   const [securityModalOpen, setSecurityModalOpen] = useState(false);
@@ -33,9 +9,9 @@ export const Footer = () => {
   return (
     <footer id="contact" className="bg-primary text-white py-20 px-6 md:px-12">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20 mb-12">
           {/* Logo & Description */}
-          <div>
+          <div className="md:col-span-1">
             <img src={companyLogo} alt="HIGHFLAT" className="h-6 md:h-8 mb-6 brightness-0 invert" />
             <p className="opacity-80 leading-relaxed">
               技術で未来を創る。
@@ -44,10 +20,10 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Company Info Section */}
+          {/* Site Links */}
           <div className="md:text-left text-center">
-            <h4 className="text-xl font-bold mb-6">会社情報</h4>
-            <ul className="list-none space-y-3">
+            <h4 className="text-xl font-bold mb-6">サイトマップ</h4>
+            <ul className="list-none space-y-3 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-3 lg:space-y-0">
               <li>
                 <a
                   href="#vision"
@@ -74,6 +50,14 @@ export const Footer = () => {
               </li>
               <li>
                 <a
+                  href="#recruitment"
+                  className="text-white/80 transition-colors duration-300 hover:text-white"
+                >
+                  採用情報
+                </a>
+              </li>
+              <li>
+                <a
                   href="#company"
                   className="text-white/80 transition-colors duration-300 hover:text-white"
                 >
@@ -83,28 +67,38 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Footer Sections */}
-          {footerSections.map((section) => (
-            <div key={section.title} className="md:text-left text-center">
-              <h4 className="text-xl font-bold mb-6">{section.title}</h4>
-              <ul className="list-none space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white/80 transition-colors duration-300 hover:text-white"
-                      {...(link.external && {
-                        target: '_blank',
-                        rel: 'noopener noreferrer',
-                      })}
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Contact */}
+          <div className="md:text-left text-center">
+            <h4 className="text-xl font-bold mb-6">お問い合わせ</h4>
+            <ul className="list-none space-y-3">
+              <li>
+                <a
+                  href="tel:050-3852-7092"
+                  className="text-white/80 transition-colors duration-300 hover:text-white"
+                >
+                  TEL: 050-3852-7092
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@highflat.jp"
+                  className="text-white/80 transition-colors duration-300 hover:text-white"
+                >
+                  info@highflat.jp
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScpzWx-7777Ubaj3FVrbNV0I-v8uoaar3l8ZyGOGoDBr839CA/viewform?pli=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 transition-colors duration-300 hover:text-white"
+                >
+                  お問い合わせフォーム
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Policy Links & Copyright */}
